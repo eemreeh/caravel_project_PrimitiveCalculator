@@ -1,5 +1,8 @@
 # Caravel user project includes
 -v $(USER_PROJECT_VERILOG)/rtl/user_project_wrapper.v	     
--v $(USER_PROJECT_VERILOG)/rtl/user_proj_example.v
-
- 
+-v $(USER_PROJECT_VERILOG)/rtl/PrimitiveCalculator/src/PrimitiveCalculator.v
+-v $(USER_PROJECT_VERILOG)/rtl/PrimitiveCalculator/src/ClockDivider.v
+-v $(USER_PROJECT_VERILOG)/rtl/PrimitiveCalculator/src/Debouncer.v
+-v $(USER_PROJECT_VERILOG)/rtl/PrimitiveCalculator/src/HexSevenSegmentDecoder.v
+-v $(USER_PROJECT_VERILOG)/rtl/PrimitiveCalculator/src/PrimitiveALU.v
+-v $(USER_PROJECT_VERILOG)/rtl/PrimitiveCalculator/src/RotaryEncoder.v 
