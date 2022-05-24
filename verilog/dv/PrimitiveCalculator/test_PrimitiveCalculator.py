@@ -46,7 +46,7 @@ async def run_encoder_test(encoder, dut_enc, max_count):
         assert(dut_enc == max_count)
 
 @cocotb.test()
-async def test_all(dut)
+async def test_all(dut):
     clock = Clock(dut.clk, 5, units="us")
     clocks_per_phase = 5
     # no noise
