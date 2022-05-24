@@ -15,7 +15,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#include "verilog/dv/caravel/defs.h"
+#include <defs.h>
+#include <stub.c>
 
 #define PROJECT_ID 0
 

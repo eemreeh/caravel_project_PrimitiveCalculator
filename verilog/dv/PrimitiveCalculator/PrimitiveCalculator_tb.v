@@ -17,12 +17,10 @@
 
 `timescale 1 ns / 1 ps
 
-`include "uprj_netlists.v" // this file gets created automatically by multi_project_tools from the source section of info.yaml
-`include "caravel_netlists.v"
-`include "spiflash.v"
-
+// change module name to something that suits your project
 module PrimitiveCalculator_tb;
     initial begin
+        // change to suit your project
         $dumpfile ("PrimitiveCalculator.vcd");
         $dumpvars (0, PrimitiveCalculator_tb);
         #1;
@@ -33,13 +31,13 @@ module PrimitiveCalculator_tb;
     reg power1, power2;
     reg power3, power4;
 
-    // GL design loses the reset signal name
-    wire design_reset = uut.mprj.la1_data_in[0];
-
     wire gpio;
     wire [37:0] mprj_io;
 
     ///// convenience signals that match what the cocotb test modules are looking for
+    // change to suit your project. Here's how we can make some nicer named signals for inputs & outputs
+
+
 
     wire sync = mprj_io[21];
 
@@ -53,6 +51,8 @@ module PrimitiveCalculator_tb;
     assign mprj_io[ 9] = restart;
     assign mprj_io[10] = rotary_a;
     assign mprj_io[11] = rotary_b;
+
+
     /////
     
 
@@ -93,6 +93,7 @@ module PrimitiveCalculator_tb;
     );
 
     spiflash #(
+        // change the hex file to match your project
         .FILENAME("PrimitiveCalculator.hex")
     ) spiflash (
         .csb(flash_csb),
