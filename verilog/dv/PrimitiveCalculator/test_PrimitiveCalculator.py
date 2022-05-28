@@ -1,12 +1,11 @@
+
+  
 import cocotb
 from cocotb.clock import Clock
 from cocotb.triggers import RisingEdge, FallingEdge, ClockCycles, with_timeout
 import random
-from test_encoder import Encoder_calc
+from encoder import Encoder_calc
 
-clocks_per_phase = 10
-
-# takes ~60 seconds on my PC
 @cocotb.test()
 async def test_start(dut):
     clock = Clock(dut.clk, 25, units="ns")
@@ -30,8 +29,32 @@ async def test_start(dut):
     await ClockCycles(dut.clk, 80)
     dut.RSTB.value = 1
 
+    # wait with a timeout for the project to become active
+    await with_timeout(RisingEdge(dut.sync), 500, 'us')
+
+    # wait
+    await ClockCycles(dut.clk, 6000)
+
+    # assert something
+    assert(0 == 25)
+
+clocks_per_phase = 10
+
+async def reset(dut):
+     dut.rst.value = 1
+     dut.select.value = 0
+     dut.restart.value = 0
+     dut.rotary_a.value = 0
+     dut.rotary_b.value = 0
+
+     await ClockCycles(dut.clk, 5)
+     dut.rst.value = 0
+     await ClockCycles(dut.clk, 5)
+
+
     # wait for the project to become active
-    await RisingEdge(dut.sync)
+   # await with_timeout(RisingEdge(dut.sync), 500, 'us')
+#    await with_timeout(RisingEdge(dut.uut.mprj.PrimitiveCalculator.rst), 500, 'us')
 
 async def run_encoder_test(encoder, dut_enc, max_count):
     for i in range(clocks_per_phase * 2 * max_count):

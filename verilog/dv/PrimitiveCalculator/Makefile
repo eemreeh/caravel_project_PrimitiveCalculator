@@ -27,7 +27,7 @@ coco_test: PrimitiveCalculator.hex
 	-f$(USER_PROJECT_VERILOG)/includes/includes.rtl.$(CONFIG) -o sim_build/sim.vvp PrimitiveCalculator_tb.v
 
     # change this line to choose the comma separated test cases and the name of your python test module
-	TESTCASE=test_start MODULE=test_PrimitiveCalculator vvp -M $$(cocotb-config --prefix)/cocotb/libs -m libcocotbvpi_icarus sim_build/sim.vvp
+	TESTCASE=test_start,test_all MODULE=test_PrimitiveCalculator vvp -M $$(cocotb-config --prefix)/cocotb/libs -m libcocotbvpi_icarus sim_build/sim.vvp
 	! grep failure results.xml
 
 # change the project.hex to your projects firmware file
