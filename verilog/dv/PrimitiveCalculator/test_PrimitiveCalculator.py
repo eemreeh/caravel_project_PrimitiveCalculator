@@ -40,17 +40,6 @@ async def test_start(dut):
 
 clocks_per_phase = 10
 
-async def reset(dut):
-     dut.rst.value = 1
-     dut.select.value = 0
-     dut.restart.value = 0
-     dut.rotary_a.value = 0
-     dut.rotary_b.value = 0
-
-     await ClockCycles(dut.clk, 5)
-     dut.rst.value = 0
-     await ClockCycles(dut.clk, 5)
-
 
     # wait for the project to become active
    # await with_timeout(RisingEdge(dut.sync), 500, 'us')
@@ -76,7 +65,6 @@ async def test_all(dut):
     encoder = Encoder_calc(dut.clk, dut.rotary_a, dut.rotary_b, clocks_per_phase = clocks_per_phase, noise_cycles = 0)
     cocotb.fork(clock.start())
     
-    await reset(dut)
     assert dut.seven_segment_out.value == 63
     
 #    random_a = random.randint(0,255)

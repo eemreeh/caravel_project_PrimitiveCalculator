@@ -1,10 +1,10 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1653734141" />
-    <testcase name="test_start" classname="test_PrimitiveCalculator" file="/home/emre/ASIC/caravel_user_project/verilog/dv/PrimitiveCalculator/test_PrimitiveCalculator.py" lineno="9" time="15.066540002822876" sim_time_ns="651525.001" ratio_time="43243.17334158539">
+    <property name="random_seed" value="1653735407" />
+    <testcase name="test_start" classname="test_PrimitiveCalculator" file="/home/emre/ASIC/caravel_user_project/verilog/dv/PrimitiveCalculator/test_PrimitiveCalculator.py" lineno="9" time="15.848525047302246" sim_time_ns="651525.001" ratio_time="41109.50382167604">
       <failure />
     </testcase>
-    <testcase name="test_all" classname="test_PrimitiveCalculator" file="/home/emre/ASIC/caravel_user_project/verilog/dv/PrimitiveCalculator/test_PrimitiveCalculator.py" lineno="71" time="0.0003337860107421875" sim_time_ns="0.0009999999310821295" ratio_time="2.995931222098214">
+    <testcase name="test_all" classname="test_PrimitiveCalculator" file="/home/emre/ASIC/caravel_user_project/verilog/dv/PrimitiveCalculator/test_PrimitiveCalculator.py" lineno="60" time="1.1276295185089111" sim_time_ns="1430000.0010000002" ratio_time="1268147.0088606053">
       <failure />
     </testcase>
   </testsuite>

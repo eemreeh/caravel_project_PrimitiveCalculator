@@ -41,7 +41,7 @@ module PrimitiveCalculator_tb;
 
     wire sync = mprj_io[21];
 
-    wire seven_segment_out = mprj_io[18:12];
+    wire [6:0] seven_segment_out = mprj_io[18:12];
     wire seven_segment_digit = mprj_io[19];
     wire led_flag = mprj_io[20];    
 
