@@ -88,7 +88,7 @@ PrimitiveCalculator PrimitiveCalculator (
 	.vssd1(vssd1),	// User area 1 digital ground
 `endif
     .clk(wb_clk_i),
-    .rst(la_data_in[0]),
+    .rst(la_data_in[32]),
 
     .select(io_in[8]),
     .restart(io_in[9]),

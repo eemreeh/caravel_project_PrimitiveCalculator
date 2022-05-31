@@ -30,13 +30,13 @@ async def test_start(dut):
     dut.RSTB.value = 1
 
     # wait with a timeout for the project to become active
-    await with_timeout(RisingEdge(dut.sync), 500, 'us')
+    await with_timeout(RisingEdge(dut.sync), 600, 'us')
 
     # wait
     await ClockCycles(dut.clk, 6000)
 
     # assert something
-    assert(0 == 25)
+#    assert(0 == 25)
 
 clocks_per_phase = 10
 
